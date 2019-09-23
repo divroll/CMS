@@ -1,0 +1,23 @@
+<div class="uk-grid" field-type="LONG_TEXT" style="margin-bottom: 70px; !important"> <!-- just a quick fix for the overlap bug  -->
+    <h2 class="uk-width-1-4	" id="name"></h2>
+    <!--<textarea type="text" class="uk-text-small uk-width-2-3" id="value"></textarea>-->
+    <div class="uk-width-3-4" style="padding-left: 0px;">
+        <div id="toolbar" class="toolbar uk-width-1-1">
+            <!-- Add font size dropdown -->
+            <select class="ql-size">
+                <option value="small"></option>
+                <!-- Note a missing, thus falsy value, is used to reset to default -->
+                <option selected></option>
+                <option value="large"></option>
+                <option value="huge"></option>
+            </select>
+            <!-- Add a bold button -->
+            <button class="ql-bold"></button>
+            <button class="ql-italic"></button>
+            <!-- Add subscript and superscript buttons -->
+        </div>
+        <div id="editor" class="editor uk-width-1-1">
+            <p></p>
+        </div>
+    </div>
+</div>

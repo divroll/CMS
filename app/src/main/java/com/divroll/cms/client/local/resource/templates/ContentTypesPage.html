@@ -1,0 +1,82 @@
+<div data-field="content">
+    <div class="navigation" role="navigation" data-uk-sticky="" data-field="navbar">
+        <div class="uk-container uk-container-center">
+            <div class="uk-align-left uk-margin-remove">
+                <h2 class="graffiti-logo-nav">CMS</h2>
+            </div>
+            <div class="uk-align-left uk-margin-remove">
+                <span class="uk-vertical-align">Dashboard</span>
+            </div>
+            <div class="uk-align-right uk-margin-remove">
+                <span class="uk-vertical-align">Logout your@email.com</span>
+            </div>
+        </div>
+    </div>
+    <div class="uk-width-1-1 uk-panel uk-margin-large-top" role="project">
+        <div class="uk-panel uk-container uk-container-center">
+            <div class="uk-panel uk-width-1-1">
+                <h1 class=" uk-align-left uk-margin-bottom">Select a Content Type</h1>
+            </div>
+            <div class="uk-panel uk-width-1-1 projects" data-field="panel">
+                <ul class="uk-list uk-list-striped" id="types">
+                    <li>
+                        <div class="uk-grid">
+                            <div class="uk-panel uk-width-9-10 uk-margin-top">
+                                <span class="project-title uk-text-middle uk-align-left uk-margin-remove">Page</span>
+                                <span class="project-content uk-align-right uk-text-middle uk-margin-remove">10 contents</span>
+                            </div>
+                            <div class="uk-width-1-10 uk-padding-remove uk-margin-top "><img src="img/x.png" class=" uk-align-right uk-margin-remove delete" onmouseover="this.src='img/x2.png'" onmouseout="this.src='img/x.png'" data-uk-modal="{target:'#delete'}"></div>
+                        </div>
+
+                    </li>
+                    <li>
+                        <div class="uk-grid">
+                            <div class="uk-panel uk-width-9-10 uk-margin-top">
+                                <span class="project-title uk-text-middle uk-align-left uk-margin-remove">Post</span>
+                                <span class="project-content uk-align-right uk-text-middle uk-margin-remove">100 contents</span>
+                            </div>
+                            <div class="uk-width-1-10 uk-padding-remove uk-margin-top "><img src="img/x.png" class=" uk-align-right uk-margin-remove delete" onmouseover="this.src='img/x2.png'" onmouseout="this.src='img/x.png'" data-uk-modal="{target:'#delete'}"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="uk-grid">
+                            <div class="uk-panel uk-width-9-10 uk-margin-top">
+                                <span class="project-title uk-text-middle uk-align-left uk-margin-remove">Author</span>
+                                <span class="project-content uk-align-right uk-text-middle uk-margin-remove">5 contents</span>
+                            </div>
+                            <div class="uk-width-1-10 uk-padding-remove uk-margin-top "><img src="img/x.png" class=" uk-align-right uk-margin-remove delete" onmouseover="this.src='img/x2.png'" onmouseout="this.src='img/x.png'" data-uk-modal="{target:'#delete'}"></div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="uk-panel uk-width-1-1 uk-margin-top">
+                    <button class="uk-align-left" id="create-button">&nbsp;Create</button>
+                    <button class="uk-align-left grey-button" data-field="setup-button"><i></i>&nbsp;Setup</button>
+
+                    <!--<span class="uk-align-left remaining "><span>2</span> remaining</span>-->
+                </div>
+
+            </div>
+
+        </div>
+        <div class="uk-width-1-1">
+        </div>
+    </div>
+    <div class="uk-modal" id="delete-modal" style="" role="delete-modal">
+        <div class="uk-modal-dialog no-rounded-corners delete-bg">
+            <div class="uk-float-right">
+                <span class="close uk-modal-close"><img src="img/x.png" class="close-button" id="close"></span>
+            </div><br><br>
+            <div class="uk-panel">
+                <div class="uk-width-1-1 uk-margin-large-bottom">
+                    <h1 class="question" >Are you sure you want to <span class="del-red">delete abc</span> type?</h1>
+                </div>
+                <div class="uk-width-1-1 ">
+                    <button class=" uk-align-right">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="uk-modal" id="setup-modal">
+    </div>
+</div>
+

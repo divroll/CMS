@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="fragment" content="!">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- TEMPLATE CSS !-->
+    <link rel="stylesheet" href="css/template.css" />
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- UI-ASSETS !-->
+    <link rel="stylesheet" href="uikit-assets/css/uikit.min.css" />
+    <link rel="stylesheet" href="uikit-assets/css/uikit.almost-flat.css" />
+    <link rel="stylesheet" href="uikit-assets/css/components/form-password.almost-flat.css" />
+    <link rel="stylesheet" href="uikit-assets/css/components/sticky.almost-flat.min.css" />
+    <link rel="stylesheet" href="uikit-assets/css/components/notify.almost-flat.css" />
+    <!-- OTHER CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="flatpickr/flatpickr.css" />
+    <link rel="stylesheet" href="quill/quill.snow.css" >
+    <link rel="stylesheet" href="css/prism.css">
+    <link rel="stylesheet" href="css/prism-duotone-earth.css">
+    <!-- CSS FOR LOGIN -->
+    <style>
+		input:focus,
+		textarea:focus,
+		button:focus {
+			outline: 0;
+		}
+
+		input[disabled], input[disabled]:hover {
+			background-color: #fff;
+		}
+		input {
+			padding: 5px;
+			color: #061f29;
+			font-family: Montserrat, sans-serif!important;
+			font-size:22px;
+			border:  #e3e3e2 2px solid;
+		}
+
+		input:hover,
+		input:focus{
+			outline: 0;
+		}
+
+		.login-content{
+			/*padding: 250px 0px 0px 0px;*/
+			height: 250px;
+			top: 20%;
+		}
+		.login-form{
+			width: 400px;
+		}
+		.login-menu{
+			padding: 5px 0px 0px 0px;
+		}
+		.forgot{
+			color: #fff!important;
+		}
+		.forgot:hover, .forgot:active, .forgot:focus{
+			text-decoration: underline!important;
+		}
+	</style>
+</head>
+<body>
+<div id="rootPanel"></div>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+<script type="text/javascript" language="javascript" src="js/vendor/modernizr-2.6.2.min.js"></script>
+<script type="text/javascript" language="javascript" src="uikit-assets/js/uikit.min.js"></script>
+<script type="text/javascript" language="javascript" src="uikit-assets/js/components/sticky.min.js"></script>
+<script type="text/javascript" language="javascript" src="uikit-assets/js/components/form-password.js"></script>
+<script type="text/javascript" language="javascript" src="js/plugins.js"></script>
+<script type="text/javascript" language="javascript" src="js/prism.js"></script>
+<script type="text/javascript" language="javascript" src="js/main.js"></script>
+<script type="text/javascript" language="javascript" src="https://unpkg.com/turndown/dist/turndown.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+<script type="text/javascript" language="javascript" src="quill/quill.min.js"></script>
+<script type="text/javascript" language="javascript" src="flatpickr/flatpickr.js"></script>
+<!--<script type="text/javascript" language="javascript" src="app.nocache.js"></script>-->
+<script type="text/javascript" language="javascript">
+    var config;
+    var divrollServerUrl;
+    var divrollApiKey;
+    var divrollAppId;
+    function fetchLocal(url) {
+        return new Promise(function(resolve, reject) {
+            var xhr = new XMLHttpRequest
+            xhr.onload = function() {
+                resolve(new Response(xhr.responseText, {status: xhr.status}))
+            }
+            xhr.onerror = function() {
+                reject(new TypeError('Local request failed'))
+            }
+            xhr.open('GET', url)
+            xhr.send(null)
+        })
+    }
+    fetchLocal("config.json").then(function (response) {
+        return response.json();
+    }).then(function (value) {
+        config = value;
+        if (typeof config.appId != 'undefined' && config.appId) {
+            divrollAppId = config.appId;
+        };
+        if (typeof config.apiKey != 'undefined' && config.apiKey) {
+            divrollApiKey = config.apiKey;
+        };
+        if (typeof config.serverUrl != 'undefined' && config.serverUrl) {
+            divrollServerUrl = config.serverUrl;
+        };
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "app.nocache.js";
+        document.getElementsByTagName("head")[0].appendChild(script);
+    }).catch(function (reason) {
+        console.log(reason);
+    })
+</script>
+<script type="text/javascript" language="javascript">erraiBusRemoteCommunicationEnabled = false;</script>
+<script>
+		$('html').removeClass('login');
+		$(window).resize(function() {
+			var width = $(window).width();
+
+			if (width <= 1024  ) {
+				//do something
+
+				$('#no-result').removeClass('no-result');
+				$('#create').addClass('uk-margin-top')
+			}
+			else {
+				//do something else
+				$('#no-result').addClass('no-result');
+				$('#create').removeClass('uk-margin-top')
+			}
+		});
+
+</script>
+<script>
+
+    $('.checkbox').on('click', function(e){
+        e.stopPropagation();
+        if(($(this).hasClass('text-blue'))){
+            $(this).removeClass('text-blue');
+        }
+        else{
+            $('.checkbox').removeClass('text-blue');
+            $(this).addClass('text-blue');
+        }
+    });
+</script>
+<script>
+  (function() {
+    var oldOpen = XMLHttpRequest.prototype.open;
+    window.openHTTPs = 0;
+    XMLHttpRequest.prototype.open = function(method, url, async, user, pass) {
+      window.openHTTPs++;
+      this.addEventListener("readystatechange", function() {
+          if(this.readyState == 4) {
+            window.openHTTPs--;
+          }
+        }, false);
+      oldOpen.call(this, method, url, async, user, pass);
+    }
+  })(XMLHttpRequest);
+  </script>
+</body>
+</html>

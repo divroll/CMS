@@ -1,0 +1,78 @@
+<div data-field="content">
+    <div class="navigation" role="navigation" data-uk-sticky="" data-field="navbar">
+        <div class="uk-container uk-container-center">
+            <div class="uk-align-left uk-margin-remove">
+                <h2 class="graffiti-logo-nav">CMS</h2>
+            </div>
+            <div class="uk-align-left uk-margin-remove">
+                <span class="uk-vertical-align">Dashboard</span>
+            </div>
+            <div class="uk-align-right uk-margin-remove">
+                <span class="uk-vertical-align">Logout your@email.com</span>
+            </div>
+        </div>
+    </div>
+    <div class="uk-width-1-1 uk-panel uk-margin-large-top" role="project">
+        <div class="uk-panel uk-container uk-container-center">
+            <div class="uk-panel new-project uk-width-1-1 "><h1 class=" uk-align-left uk-margin-bottom"><span id="name-prefix">New</span> <span id="name"></span></h1></div>
+            <div class="uk-panel uk-margin">
+                <div class="uk-width-8-10 uk-margin-bottom">
+                    <div class="uk-width-1-1">
+                        <div class="uk-panel" id="fields">
+                            <div class="uk-grid  ">
+                                <h2 class="uk-width-1-3	">Title</h2>
+                                <input type="text" class="uk-text-small uk-width-2-3">
+                            </div>
+                            <div class="uk-grid">
+                                <h2 class="uk-width-1-3	">Body</h2>
+                                <textarea type="text" class="uk-text-small uk-width-2-3" id="body"></textarea>
+                            </div>
+                            <div class="uk-grid">
+                                <h2 class="uk-width-1-3">Published</h2>
+                                <div class="uk-width-2-3 uk-padding-remove">
+                                    <input placeholder="Select Date" class="datepicker" id="date"/>
+                                    <input placeholder="Select Time" class="timepicker" id="time"/>
+                                </div>
+                            </div>
+                            <div class="uk-grid">
+                                <h2 class="uk-width-1-3">Author</h2>
+                                <div class="uk-width-2-3 uk-padding-remove">
+                                    <div class="uk-margin-bottom">
+                                        <span>To select authors, create a "Author" content type</span>
+                                    </div>
+                                    <select>
+                                        <option value="none">- None -</option>
+                                        <option value="volvo">Volvo</option>
+                                        <option value="saab">Saab</option>
+                                        <option value="mercedes">Mercedes</option>
+                                        <option value="audi">Audi</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="uk-grid">
+                                <h2 class="uk-width-1-3">Media</h2>
+                                <div class="uk-width-2-3 uk-padding-remove">
+                                    <div class="uk-margin-bottom">
+                                        <span>Choose an optional file attachment for this content. Only files less than 100kb size</span>
+                                    </div>
+                                    <button id="choose-button" data-field="choose"><i class="fa fa-circle-o-notch fa-spin"></i>&nbsp;Choose</button>
+                                </div>
+                                <div class="upload-wrapper uk-container-center uk-margin-xlarge-bottom uk-margin-top" id="upload">
+                                    <img src="img/upload.png" alt="" class="uk-align-center uk-margin-top">
+                                    <p class="text-normal uk-text-center uk-margin-bottom">upload media</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div>
+                    <button class="uk-align-right" data-field="save">&nbsp;Save</button>
+                    <button class="uk-align-right grey-button" data-field="cancel"><i></i>&nbsp;Cancel</button>
+                </div>
+            </div>
+        </div>
+        <div class="uk-width-1-1">
+        </div>
+    </div>
+</div>
